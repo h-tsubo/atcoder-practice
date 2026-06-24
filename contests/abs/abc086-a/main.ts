@@ -1,6 +1,6 @@
-import * as fs from  'fs';
+const fs = require("fs");
 
-const input = fs.readFileSync(0, "utf-8").trim().split(/\s/).map(Number);
+const input = fs.readFileSync(0, "utf-8").trim().split(/\s+/).map(Number);
 
 const [a, b] = input;
 
