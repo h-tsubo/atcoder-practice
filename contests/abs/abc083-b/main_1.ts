@@ -9,9 +9,17 @@ const b = input[2];
 let ansSum = 0;
 
 for (let i = 0; i <= n; i++) {
-  const digitSum = String(i).split("").map(Number).reduce((total, digit) => total + digit, 0);
-  
-  ansSum = (a <= digitSum && digitSum <= b) ? ansSum + i : ansSum;
+  let digitSum = 0;
+  let num = i;
+
+  while(num > 0) {
+    digitSum += num %10;
+    num = Math.floor(num / 10);
+  }
+
+  if (a <= digitSum && digitSum <= b) {
+    ansSum += i;
+  }
 }
 
 console.log(ansSum);

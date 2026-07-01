@@ -11,10 +11,13 @@ $x = $nums[3];
 $count = 0;
 
 for ($i = 0; $i <= $a; $i++) {
-  for($j = 0; $j <= $b; $j++) {
-    $rest = $x - 500 * $i - 100 * $j;
-    if ($rest >= 0 && $rest / 50 <= $c) {
-      $count++;
+  for ($j = 0; $j <= $b; $j++) {
+    for ($k = 0; $k <= $c; $k++) {
+      $total = 500 * $i + 100 * $j + 50 * $k;
+
+      if ($total === $x) {
+        $count++;
+      }
     }
   }
 }
